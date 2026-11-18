@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100dvw;
+    flex-direction: row;
+}
+
+.toll {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    min-width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.toll-read {
+    width: 150px;
+    background-color: lightgray;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    align-self: flex-end;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: solid black 3px;
+}
+
+.toll-read p {
+    text-align: center;
+    border: solid rgba(0, 0, 0, 0.296) 1px;
+    border-radius: 10px;
+    padding: 20px;
+}
+.toll-read p > span {
+    font-size: 14px;
+    
+}
+
+
+#target {
+    width: 120px;
+    height: 60px;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#target.hit {
+    background-color: lime;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20%;
+    padding: 20px;
+}
+
+.drag-el {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    height: 120px;
+    background-color: rgb(250, 250, 250);
+    border: solid black 1px;
+    touch-action: none;
+    user-select: none;
+    cursor: grab;
+    will-change: transform;
+    transition: none;
+    border-radius: 10px;
+}
+
+.owner {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.location {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+.drag {
+    cursor: grabbing;
+    z-index: 10;
+}
+
+.gate{
+    flex-direction: row;
+    display: flex;
+    position: relative;
+    width: 500px;
+    align-self: flex-end;
+    margin-right: 60px;
+}
+
+.hold{
+    height: 170px;
+    width: 60px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: red;
+}
+
+.pole{
+    width: 500px;
+    height: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: white;
+    border: solid red 3px;
+    position: absolute;
+    left: 15px;
+    top: 30px;
+    transform-origin: 2% 50%;
+    transition: transform 1.3s cubic-bezier(.45,.05,.3,1);
+}
+
+.active{
+  transform: rotate(-90deg); 
+}
+
+/* ===== Tambahan: kartu ditolak + panel pengaturan simulasi ===== */
+
+#target.deny {
+    background-color: crimson;
+}
+
+.sim-panel {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 20;
+    width: 330px;
+    max-height: calc(100vh - 20px);
+    overflow-y: auto;
+    padding: 10px;
+    background: #fff;
+    border: solid black 1px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.sim-panel summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sim-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.sim-label {
+    width: 48px;
+    font-weight: bold;
+}
+
+.sim-switch {
+    display: flex;
+    border: solid black 1px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sim-switch label {
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+.sim-switch input {
+    display: none;
+}
+
+.sim-switch label:has(input:checked) {
+    background: black;
+    color: white;
+}
+
+.sim-buttons {
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.sim-panel button {
+    cursor: pointer;
+    padding: 3px 8px;
+}
+
+.sim-title {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.cfg-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+    padding: 6px;
+    border: solid rgba(0, 0, 0, 0.3) 1px;
+    border-radius: 6px;
+}
+
+.cfg-name {
+    width: 70px;
+}
+
+.cfg-balance {
+    width: 90px;
+}
+
+.cfg-status {
+    width: 100%;
+    opacity: 0.7;
+}
