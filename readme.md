@@ -73,17 +73,6 @@ Backend — app.py
 
 The Flask application handles the simulation logic, parking sessions, fee calculations, and transaction records.
 
-Function / Route	Description
-load()	Loads stored parking data from parking_data.json, or initializes empty data if the file doesn’t exist.
-save(data)	Saves parking sessions and transactions to the JSON file.
-calc_fee(vehicle, t_in, t_out)	Calculates the parking fee and duration.
-add_log(…)	Records entry or exit transactions.
-/	Serves the main simulator interface.
-GET /api/sessions	Returns IDs of vehicles currently parked.
-POST /api/entry	Registers a vehicle entering the parking area.
-POST /api/exit	Calculates and processes a vehicle’s exit and balance deduction.
-GET /api/transactions	Returns the transaction history.
-
 Frontend — templates/index.html
 
 The frontend displays the simulated gate, draggable vehicle cards, and simulation settings. JavaScript handles:
@@ -150,6 +139,3 @@ Notes
 License
 
 No license has been specified for this repository yet.
-
-<text color="success" weight="medium">Tip:</text> On GitHub, name the file exactly `README.md` (capital letters matter for consistency), and paste the content.
-I can also help you add a flowchart and a more professional GitHub presentation.
